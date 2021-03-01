@@ -10,18 +10,6 @@ jobs:
     steps:
       - checkout # git pull
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - jpademo-{{ checksum "pom.xml" }}
-
-      - run: mvn dependency:go-offline
-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: webtest-{{ checksum "pom.xml" }}
-
       # package into a jar
       - run: mvn clean package
 
