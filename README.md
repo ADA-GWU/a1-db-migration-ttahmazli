@@ -16,3 +16,6 @@ Students table gets restored at last.
 
 *You may run scripts by PG Admin client of PostgreSQL with Query Tool and editor (button on top left).
 
+as-02:
+
+*Instructions can be found in submission file

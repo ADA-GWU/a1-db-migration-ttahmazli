@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<link href="style_1.css" rel="stylesheet" />
+<body class="body-bg">
+	<div class="container">
+		<h2>Əməkdaşlar</h2>
+		<a class="btn-edit external" th:href="@{/showNewEmployeeForm}">Əlavə
+			et</a>
+		<ul>
+			<li class="list table-header">
+				<div class="col-2">Adı</div>
+				<div class="col-2">Soyadı</div>
+				<div class="col-2">Email</div>
+				<div class="col-2">Tədbirlər</div>
+			</li>
+			<li class="list table-row" th:each="employee : ${listEmployees}">
+				<div class="col-2" th:utext="${employee.firstName}"></div>
+				<div class="col-2" th:utext="${employee.lastName}"></div>
+				<div class="col-2" th:utext="${employee.email}"></div>
+				<div class="col-2">
+					<a class="btn-edit"
+						th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Redaktə
+						et</a> <a class="btn-danger"
+						th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Sil</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

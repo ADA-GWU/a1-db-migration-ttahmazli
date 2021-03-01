@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+<link rel="stylesheet" href="style_1.css">
+</head>
+<body class="body-bg blur">
+	<div class="container-2 notblur">
+		<h2>New Employee</h2>
+		<form class="employee-form" action="#" th:action="@{/saveEmployee}"
+			th:object="${employee}" method="POST">
+			<span class="error error-name hidden">Can't be null</span>
+			<input class="name" id="check" type="text" th:field="*{firstName}"
+				placeholder="Employee First Name">
+			<span class="error error-name hidden">Can't be null</span>
+			<input class="name" type="text" th:field="*{lastName}"
+				placeholder="Employee Last Name">
+			<span class="error error-mail hidden">Invalid email</span>
+			<input class="email" type="text" th:field="*{email}"
+				placeholder="Employee email">
+		</form>
+		<button class="btn-edit save">Save Employee</button>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
